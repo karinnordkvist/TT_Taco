@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import MainRecipe from './components/MainRecipe';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="outer-wrapper">
+      <div className="inner-wrapper">
+        <MainRecipe />
+      </div>
     </div>
-  )
-}
+  );
+};
