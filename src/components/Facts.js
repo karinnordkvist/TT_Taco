@@ -37,6 +37,7 @@ const FactsWrapper = styled.div`
   @media (max-width: 1050px) {
     margin: 50px 20px 0 20px;
     column-count: 1;
+    max-height: auto;
   }
 `;
 
