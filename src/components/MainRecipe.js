@@ -1,71 +1,113 @@
-import Markdown from 'markdown-to-jsx';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 
-const recipe_URL =
-  'https://taco-randomizer.herokuapp.com/random/?full-taco=true';
+import { getRecipe, getImageUrl } from '../reducers/tacos';
 
-const MainRecipe = () => {
-  const [recipe, setRecipe] = useState('');
+import { Buttons } from './Buttons';
+import { Condiments } from './Condiments';
+import { Facts } from './Facts';
 
-  const getRecipe = () => {
-    fetch(recipe_URL)
-      .then((results) => results.json())
-      .then((json) => {
-        console.log(json);
-        setRecipe(json.recipe);
-      });
-  };
+// -------------------------------------------------
+
+export const MainRecipe = () => {
+  const dispatch = useDispatch();
+  const recipe = useSelector((store) => store.tacos.recipe);
+  const imageUrl = useSelector((store) => store.tacos.imageUrl);
 
   useEffect(() => {
-    getRecipe();
-    // console.log(recipe);
+    dispatch(getRecipe());
+    dispatch(getImageUrl());
   }, []);
 
-  const toDiv = ({ children, ...props }) => <div {...props}>{children}</div>;
-  const toH1 = ({ children, ...props }) => <h1 {...props}>{children}</h1>;
-  const toUl = ({ children, ...props }) => <ul {...props}>{children}</ul>;
-  const toLi = ({ children, ...props }) => <li {...props}>{children}</li>;
-  const toP = ({ children, ...props }) => <p {...props}>{children}</p>;
-
   return (
-    <Markdown
-      options={{
-        overrides: {
-          h1: {
-            component: toH1,
-            props: {
-              className: 'main-recipe__header',
-            },
-          },
-          p: {
-            component: toP,
-            props: {
-              className: 'main-recipe__text',
-            },
-          },
-          ul: {
-            component: toUl,
-            props: {
-              className: 'main_recipe__list',
-            },
-          },
-          ol: {
-            component: toUl,
-            props: {
-              className: 'main_recipe__list',
-            },
-          },
-          li: {
-            component: toLi,
-            props: {
-              className: 'main_recipe__list__item',
-            },
-          },
-        },
-      }}
-    >
-      {recipe}
-    </Markdown>
+    <>
+      <MainRecipeWrapper>
+        <div>
+          <Recipe dangerouslySetInnerHTML={{ __html: recipe }} />
+          <Buttons />
+        </div>
+        <Image src={imageUrl} />
+      </MainRecipeWrapper>
+      <Facts />
+      <Condiments />
+    </>
   );
 };
-export default MainRecipe;
+
+// STYLING ----------------------------------------
+const MainRecipeWrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  direction: ltr;
+
+  @media (max-width: 1050px) {
+    grid-template-columns: 1fr;
+
+    div {
+      &:first-child {
+        order: 2; // Reversing the order so that the image goes on top
+      }
+    }
+  }
+`;
+
+const Recipe = styled.div`
+  /* I figured this was the smartest way to style the unreachable 
+elements in the generated recipe. But I have to admit it's not
+the prettiest.. */
+
+  a {
+    border-bottom: 2px solid #000;
+
+    & :hover {
+      border: 2px solid #000;
+    }
+  }
+  h1 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 0;
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p {
+    &:nth-child(2) {
+      font-size: 32px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    line-height: 24px;
+    padding-inline-start: 0px;
+  }
+
+  ol {
+    padding-inline-start: 20px;
+  }
+
+  li {
+    line-height: 24px;
+    max-width: 30vw;
+    margin: 10px 10px 10px 0;
+    word-wrap: normal;
+  }
+
+  @media (max-width: 1050px) {
+    margin: 0 20px;
+  }
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+`;
