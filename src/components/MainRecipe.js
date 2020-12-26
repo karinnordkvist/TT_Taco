@@ -103,6 +103,14 @@ the prettiest.. */
 
   @media (max-width: 1050px) {
     margin: 0 20px;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    li {
+      max-width: 100vw;
+    }
   }
 `;
 
