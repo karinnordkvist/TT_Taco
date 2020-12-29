@@ -66,7 +66,7 @@ export const Header = () => {
 
 // STYLING ----------------------------------------
 const HeaderOuterWrapper = styled.div`
-  height: 64px;
+  height: 70px;
   display: flex;
   align-self: center;
   width: 100vw;
@@ -74,7 +74,7 @@ const HeaderOuterWrapper = styled.div`
 
 const HeaderInnerWrapper = styled.div`
   width: 95vw;
-  max-width: 1150px;
+  max-width: 1180px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -89,10 +89,10 @@ const HeaderLogo = styled.h1`
 `;
 
 const Link = styled.a`
-  font-weight: 600;
-  font-size: 12px;
-  color: #484848;
   font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #484848;
   margin: 0 25px;
   padding: 3px 0;
   border-bottom: 2px solid transparent;
@@ -135,15 +135,15 @@ const Hamburger = styled(Link)`
 `;
 
 const Button = styled.button`
+  font-family: 'Spezia';
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
   margin-right: 25px;
   padding: 8px 16px;
   border-radius: 3px;
-  line-height: 24px;
   background: none;
   border: 1px solid #00000015;
-  font-family: 'Spezia';
-  font-weight: 600;
-  font-size: 14px;
   height: 40px;
 
   &:hover {

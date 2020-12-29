@@ -69,7 +69,8 @@ the prettiest.. */
     font-weight: 600;
     text-transform: uppercase;
     margin-top: 0;
-    font-size: 50px;
+    font-size: 48px;
+    line-height: 58px;
   }
 
   h2 {
@@ -81,6 +82,8 @@ the prettiest.. */
   p {
     &:nth-child(2) {
       font-size: 32px;
+      line-height: 40px;
+      color: #333;
     }
   }
 
