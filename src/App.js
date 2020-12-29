@@ -40,7 +40,7 @@ const OuterWrapper = styled.div`
 const InnerWrapper = styled.div`
   width: 95vw;
   max-width: 1150px;
-  margin: 50px auto;
+  margin: 60px auto;
 
   @media (max-width: 1050px) {
     width: 100vw;

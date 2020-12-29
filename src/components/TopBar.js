@@ -16,7 +16,7 @@ export const TopBar = () => {
 // STYLING ----------------------------------------
 const Wrapper = styled.div`
   width: 100vw;
-  height: 54px;
+  height: 60px;
   background: #000;
   display: flex;
   align-content: center;

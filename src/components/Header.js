@@ -74,7 +74,7 @@ const HeaderOuterWrapper = styled.div`
 
 const HeaderInnerWrapper = styled.div`
   width: 95vw;
-  max-width: 1180px;
+  max-width: 1150px;
   margin: auto;
   display: flex;
   align-items: center;
