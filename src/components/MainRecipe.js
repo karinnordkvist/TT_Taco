@@ -120,6 +120,6 @@ the prettiest.. */
 
 const Image = styled.img`
   width: 100%;
-  height: 500px;
+  height: 550px;
   object-fit: cover;
 `;

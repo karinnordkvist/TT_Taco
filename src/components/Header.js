@@ -74,7 +74,7 @@ const HeaderOuterWrapper = styled.div`
 
 const HeaderInnerWrapper = styled.div`
   width: 95vw;
-  max-width: 1150px;
+  max-width: 1180px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -82,10 +82,17 @@ const HeaderInnerWrapper = styled.div`
 `;
 
 const HeaderLogo = styled.h1`
-  font-size: 20px;
+  font-size: 21px;
   letter-spacing: 3px;
   font-weight: 600;
-  break-inside: avoid;
+  -webkit-text-stroke: 0.5px black;
+`;
+
+const IconWrapper = styled.span`
+  font-size: 5px;
+  svg {
+    margin-bottom: 5px;
+  }
 `;
 
 const Link = styled.a`
@@ -185,13 +192,6 @@ const Stroke = styled.div`
     &:first-child {
       display: none;
     }
-  }
-`;
-
-const IconWrapper = styled.span`
-  font-size: 4px;
-  svg {
-    margin-bottom: 5px;
   }
 `;
 
