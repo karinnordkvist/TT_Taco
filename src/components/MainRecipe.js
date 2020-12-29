@@ -65,6 +65,7 @@ the prettiest.. */
       border: 2px solid #000;
     }
   }
+
   h1 {
     font-weight: 600;
     text-transform: uppercase;

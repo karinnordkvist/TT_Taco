@@ -24,7 +24,8 @@ const Wrapper = styled.div`
 
   p {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
+    line-height: 24px;
     font-weight: 600;
     margin: auto;
   }

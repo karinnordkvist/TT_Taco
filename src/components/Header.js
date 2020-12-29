@@ -42,7 +42,7 @@ export const Header = () => {
           <Link title="Log in">Login</Link>
 
           <InvertedButton title="Signup and become a member">
-            Signup
+            Sign up
           </InvertedButton>
 
           <Stroke></Stroke>
