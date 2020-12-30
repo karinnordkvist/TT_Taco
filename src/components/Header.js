@@ -101,7 +101,7 @@ const Link = styled.a`
   font-weight: 600;
   color: #484848;
   margin: 0 25px;
-  padding: 3px 0;
+  padding: 1px 0;
   border-bottom: 2px solid transparent;
 
   &:hover {
