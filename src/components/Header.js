@@ -85,7 +85,7 @@ const HeaderLogo = styled.h1`
   font-size: 21px;
   letter-spacing: 3px;
   font-weight: 600;
-  -webkit-text-stroke: 0.5px black;
+  -webkit-text-stroke: 0.2px black;
 `;
 
 const IconWrapper = styled.span`

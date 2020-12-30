@@ -77,7 +77,7 @@ the prettiest.. */
   h2 {
     font-size: 22px;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 20px 0;
   }
 
   p {
@@ -92,6 +92,7 @@ the prettiest.. */
     list-style: none;
     line-height: 24px;
     padding-inline-start: 0px;
+    margin-bottom: 20px;
   }
 
   ol {

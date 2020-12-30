@@ -92,6 +92,11 @@ const InnerWrapper = styled.div`
     line-height: 24px;
   }
 
+  ul,
+  ol {
+    padding-inline-start: 20px;
+  }
+
   li {
     line-height: 24px;
   }
